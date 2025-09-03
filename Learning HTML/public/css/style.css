@@ -1,0 +1,161 @@
+/* * Represents everything
+	Set the box sizing on everything to border box
+		Thus, margin and padding doesn't affect the width and height of the element */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+
+/* Custome property/variable in a scope */
+:root {
+	--primary-color: #4891ff;
+	--light-color: #f4f4f6;
+	--dark-color: #111;
+	
+	--btn1-color: #afe1af;
+	--btn1-hcolor: #cbebcb;
+	--btn2-color: #388de8;
+}
+
+
+/* Using downloaded font */
+@font-face {
+	font-family: "TWCenMTStd";
+	src: url('../fonts/TWCenMTStd.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* sans-serif (and onward in the list) is a fallback if TWCenMTStd fails to load */
+body {
+	font-family: "TWCenMTStd", sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	background: #fff;   /*  white   */
+}
+
+/* For links */
+a {
+	text-decoration: none;  /* No underline */
+	color: #333;			/* dark gray */
+}
+
+/* Unordered list */
+ul {
+	list-style: none;	/* No bullet points */
+}
+
+/* For images */
+img {
+	max-width: 100%;	/* Stays contained within a div */
+}
+
+
+/* --------------------------------------------- */
+/* Navbar */
+.navbar {
+	background: #fff;
+	padding: 20px;
+}
+
+/* Container in the navbar */
+.navbar .container {
+	display: flex;		/* Display as flex items - Makes them side by side automatically (flex-direction: column) */
+	justify-content: space-between;
+	align-items: center;
+}
+
+/* Main-menu in the navbar - can skip .container 
+	Applying only for Desktop view and not Mobile view */
+.navbar .main-menu ul {
+	display: flex;		/* Display side by side */
+}
+
+/* Style the elements with padding and etc. 
+	Applies to both Desktop and Mobile view */
+.navbar ul li a {
+	padding: 10px 20px;
+	display: block;
+	font-weight: 600;
+	transition: 0.5s;	/* Smoothly fade into color when Hovered */
+}
+
+/* Hover color */
+.navbar ul li a:hover {
+	color: var(--primary-color);
+}
+
+/* Any li or any link that has a icon in it
+	Applies to the icon */
+.navbar ul li a i {
+	margin-right: 10px;
+}
+
+/* Offsets "Blog" from the button */
+.navbar ul li:last-child {
+	margin-left: 10px;
+}
+
+/* --------------------------------------------- */
+/* Apply to icon */
+.hero a i {
+	margin-right: 10px;
+}
+
+
+/* --------------------------------------------- */
+
+
+/* Utility Classes */
+.container {
+	max-width: 1500px;
+	margin: 0 auto;		/* Put it in the middle */
+	padding: 0 15px;	/* Top/bottom # , Left/Right # */
+}
+
+.container-med {
+	max-width: 1400px;
+	margin: 0 auto;		/* Put it in the middle */
+	padding: 0 15px;	/* Top/bottom # , Left/Right # */
+}
+
+.container-sm {
+	max-width: 800px;
+	margin: 0 auto;		/* Put it in the middle */
+	padding: 0 15px;	/* Top/bottom # , Left/Right # */
+}
+
+/* Buttons */
+.btn {
+	display: inline-block;
+	padding: 13px 20px;
+	background: var(--btn1-color);	/* More options compared to background-color: */
+	color: #333;					/* dark gray text color */
+	font-weight: 600;
+	text-decoration: none;
+	border: none;
+	border-radius: 10px;
+	transition: 0.5s;
+}
+
+.btn:hover {
+	background: var(--btn1-hcolor);
+	/* opacity: 0.8; */
+}
+
+.btn-primary {
+	background: var(--primary-color);
+	color: #fff;
+}
+
+.btn-dark {
+	background: var(--dark-color);
+	color: #fff;
+}
+
+.btn-block {
+	display: block;
+	width: 100%;
+}
